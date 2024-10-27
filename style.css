@@ -1,32 +1,25 @@
-/* Reset Styles */
-* {
+* { 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
-/* Body Styles */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #f5f7fa;
-    padding: 20px;
 }
-
-/* Main Container */
 .container {
     width: 90%;
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
-
-/* Title Styles */
 .title {
+    grid-column: span 3;
     text-align: center;
     font-size: 2rem;
     padding: 20px;
@@ -34,19 +27,21 @@ body {
     color: #fff;
     border-radius: 10px;
 }
-
-/* Flex Wrapper */
-.flex-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
+#hoverArea {
+    width: 100px;
+    height: 100px;
+    background-color: #e0f7fa;
+    margin-top: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
-
-/* Box Styling */
+#mouseArea {
+    width: 100%;
+    height: 50px;
+    background: #c8e6c9;
+    border-radius: 8px;
+}
 .box {
-    flex: 1 1 calc(33.33% - 10px); /* Ensures 3 boxes per row on desktop */
-    max-width: calc(33.33% - 10px); /* Prevents overflow */
     padding: 20px;
     border-radius: 10px;
     background: #fff;
@@ -58,32 +53,13 @@ body {
     text-align: center;
     font-size: 1.2rem;
 }
-
-/* Box Heading */
 .box h2 {
     margin-bottom: 10px;
     color: #59249e;
 }
-
-/* Hover Area */
-#hoverArea {
-    width: 100px;
-    height: 100px;
-    background-color: #e0f7fa;
-    margin-top: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+.counter-box, .keyboard-box, .resize-box {
+    grid-column: span 2;
 }
-
-/* Mouse Area */
-#mouseArea {
-    width: 100%;
-    height: 50px;
-    background: #c8e6c9;
-    border-radius: 8px;
-}
-
-/* Buttons and Input */
 button, input {
     margin: 10px;
     padding: 10px;
@@ -92,27 +68,25 @@ button, input {
     border-radius: 5px;
     cursor: pointer;
 }
-
 button {
     background: #59249e;
     color: #fff;
 }
-
 input {
     border: 1px solid #ccc;
-    padding-left: 10px;
-}
+   padding-left: 10px;
 
-/* Drag and Drop Areas */
+}
 .drag-drop-area, .media-box {
-    flex: 1 1 100%;
     padding: 20px;
     border: 2px dashed #59249e;
     background: #e8f0fe;
     border-radius: 10px;
 }
 
-/* Responsive Styling for Tablets */
+
+
+/*Responsive Styling for Tablets */
 @media (max-width: 800px) {
     .box {
         flex: 1 1 calc(50% - 10px); /* Two boxes per row */
@@ -129,7 +103,10 @@ input {
     .flex-wrapper {
         flex-direction: column; /* Stack boxes vertically */
     }
-
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
     .box {
         flex: 1 1 100%; /* Full width for each box */
         max-width: 100%;
