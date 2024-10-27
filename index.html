@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Event Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Complete Event Tracker</div>
+        
+        <div class="box counter-box">
+            <h2>Click Event</h2>
+            <p id="clickCount">Count: 0</p>
+            <button onclick="increaseCounter()">Counter</button>
+            <button onclick="resetCounter()">Reset</button>
+        </div>
+        
+        <div class="box">
+            <h2>Mouse Over Event</h2>
+            <div id="hoverArea"></div>
+        </div>
+        
+        <div class="box">
+            <h2>Movement Tracker</h2>
+            <p id="mousePosition">Move the mouse here</p>
+            <div id="mouseArea"></div>
+        </div>
+        
+        <div class="box keyboard-box">
+            <h2>Keyboard Event</h2>
+            <input type="text" id="keyboardInput" onkeydown="showKey(event)" placeholder="Press any key">
+            <p id="keyStatus"></p>
+        </div>
+        
+        <div class="box">
+            <h2>Dropdown Event</h2>
+            <select id="dropdown" onmouseover="dropdownHover()" onchange="dropdownSelect()">
+                <option>Select an Option</option>
+                <option>Web Development</option>
+                <option>Data Science</option>
+                <option>Machine Learning</option>
+            </select>
+            <p id="dropdownStatus"></p>
+        </div>
+        
+        <div class="box resize-box">
+            <h2>Window Resize Event</h2>
+            <p id="windowSize">Resize the window</p>
+        </div>
+        
+        <div class="box">
+            <h2>Form Submit Event</h2>
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Message" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <div class="box">
+            <h2>Drag and Drop Event</h2>
+            <div id="dropArea" class="drag-drop-area" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Drop the image here
+            </div>
+            <img src="https://via.placeholder.com/100" id="dragImg" draggable="true" ondragstart="drag(event)">
+        </div>
+        
+        <div class="box media-box">
+            <h2>Media Event</h2>
+            <video width="100%" controls onplay="showMediaStatus('Playing')" onpause="showMediaStatus('Paused')" onvolumechange="showMediaStatus('Volume Changed')">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            <p id="mediaStatus"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
