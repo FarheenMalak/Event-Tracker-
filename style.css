@@ -98,7 +98,7 @@ input {
 /* Responsive styling for tablets */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:  1fr;
     }
 
     .title {
@@ -106,7 +106,7 @@ input {
     }
 
     .counter-box, .keyboard-box, .resize-box {
-        grid-column: span 2;
+        grid-column: span 1;
     }
 }
 
